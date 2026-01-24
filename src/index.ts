@@ -6,7 +6,7 @@ import { Calculator } from './utils/calculator';
  */
 function main(): void {
   console.log('Welcome to ClaudeLearn Calculator!');
-  console.log('Available operations: add, subtract, multiply, divide, sqrt, pow');
+  console.log('Available operations: add, subtract, multiply, divide, sqrt, pow, mod');
   console.log('Type "exit" to quit\n');
 
   const calc = new Calculator();
@@ -92,8 +92,14 @@ function performCalculation(calc: Calculator, input: string): number {
       }
       return calc.pow(parseNumber(parts[1]), parseNumber(parts[2]));
 
+    case 'mod':
+      if (parts.length !== 3) {
+        throw new Error('Mod requires two numbers: mod <num1> <num2>');
+      }
+      return calc.mod(parseNumber(parts[1]), parseNumber(parts[2]));
+
     default:
-      throw new Error(`Unknown operation: ${operation}. Available: add, subtract, multiply, divide, sqrt, pow`);
+      throw new Error(`Unknown operation: ${operation}. Available: add, subtract, multiply, divide, sqrt, pow, mod`);
   }
 }
 

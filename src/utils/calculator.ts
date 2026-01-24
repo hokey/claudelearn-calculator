@@ -51,4 +51,15 @@ export class Calculator {
   pow(base: number, exponent: number): number {
     return Math.pow(base, exponent);
   }
+
+  /**
+   * Returns the remainder of a divided by b
+   * @throws Error if b is zero
+   */
+  mod(a: number, b: number): number {
+    if (b === 0) {
+      throw new Error('Mod by zero is not allowed');
+    }
+    return a % b;
+  }
 }

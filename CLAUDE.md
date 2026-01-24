@@ -40,3 +40,9 @@ This is a modular TypeScript application with a simple structure:
 - Jest with `ts-jest` preset for TypeScript support
 - Tests colocated with source files (`.test.ts` suffix)
 - Coverage collection enabled (excludes test files and type definitions)
+
+## Coding Conventions
+
+### Calculator Operations
+
+- When adding new mathematical functions, use abbreviated labels (e.g., `mod` instead of `modulo`, `sqrt` instead of `squareroot`)

@@ -75,4 +75,20 @@ describe('Calculator', () => {
       expect(calculator.pow(27, 1/3)).toBeCloseTo(3, 10);
     });
   });
+
+  describe('mod', () => {
+    it('should return remainder of division', () => {
+      expect(calculator.mod(10, 3)).toBe(1);
+      expect(calculator.mod(20, 7)).toBe(6);
+    });
+
+    it('should handle negative numbers', () => {
+      expect(calculator.mod(-10, 3)).toBe(-1);
+      expect(calculator.mod(10, -3)).toBe(1);
+    });
+
+    it('should throw error when mod by zero', () => {
+      expect(() => calculator.mod(10, 0)).toThrow('Mod by zero is not allowed');
+    });
+  });
 });
