@@ -5,11 +5,16 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
+    "build:server": "tsc",
+    "build:client": "cd client && npm run build",
+    "build:all": "npm run build:server && npm run build:client",
     "test": "jest",
     "test:watch": "jest --watch",
     "lint": "eslint src/**/*.ts",
     "start": "node dist/index.js",
-    "dev": "ts-node src/index.ts"
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "nodemon --exec ts-node src/server/index.ts",
+    "client": "cd client && npm run dev"
   },
   "keywords": [
     "learning",
@@ -18,18 +23,24 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
     "@types/jest": "^30.0.0",
     "@types/node": "^24.10.0",
     "@typescript-eslint/eslint-plugin": "^8.46.4",
     "@typescript-eslint/parser": "^8.46.4",
+    "concurrently": "^9.2.1",
     "eslint": "^9.39.1",
     "jest": "^30.2.0",
     "jest-environment-jsdom": "^30.2.0",
+    "nodemon": "^3.1.11",
     "ts-jest": "^29.4.5",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
   },
   "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
     "readline": "^1.3.0"
   }
 }
