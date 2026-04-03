@@ -41,6 +41,10 @@ This is a modular TypeScript application with a simple structure:
 - Tests colocated with source files (`.test.ts` suffix)
 - Coverage collection enabled (excludes test files and type definitions)
 
+## Plans
+
+- Android & iOS/iPad support: `./PLAN.md`
+
 ## Coding Conventions
 
 ### Calculator Operations
