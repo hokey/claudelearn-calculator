@@ -1,6 +1,7 @@
 # ClaudeLearn
 
 A simple TypeScript project for learning Claude Code capabilities.
+This is from Mike Hochanadel
 
 ## Project Structure
 
